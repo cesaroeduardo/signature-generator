@@ -1,0 +1,93 @@
+html {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    width: 520px;
+}
+.box {
+    background: #fff;
+    color: #686868;
+    border: #686868 solid .5px;
+    border-radius: 4px;
+    padding: 24px;
+    z-index: 2;
+    width: 520px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+input, select {
+    height: 30px;
+    border: thin solid grey;
+    border-radius: 5px;
+    width: 100%;
+    padding-left: 10px;
+}
+select:required:invalid {
+    color: gray;
+  }
+#myHtml {
+    padding-top: 10px;
+    position: absolute;
+    top: 5px;
+    width: 580px;
+    z-index: -2;
+}
+#download {
+    height: 166px;
+    padding-left: 10px;
+    padding-top: 48px;
+}
+#download span {
+    width: 100%;
+    position: relative;
+    float: left;
+    text-align: center;
+    color: #686868 !important;
+}
+#download .nome{
+    font-size: 14.7pt;
+    line-height: 15pt;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+#download .cargo, 
+#download .email, 
+#download .telefone{
+    font-size: 7.5pt;
+    line-height: 7.9pt;
+    font-weight: 200;
+    margin-bottom: 2.7px;
+}
+.telefonesetor {
+    position: absolute !important;
+    left: 184px;
+    top: 110px;
+    font-size: 7.5pt;
+    line-height: 7.9pt;
+    font-weight: 200;
+}
+#btn_convert {
+    height: 60px;
+    font-weight: 700;
+    font-size: 10px;
+    width: 100%;
+    text-transform: uppercase;
+    background: #686868;
+    color: #fff;
+    transition: 100ms ease-in-out;
+    margin-bottom: 30px;
+}
+#btn_convert:hover {
+    opacity: .6;
+    transition: 100ms ease-in-out;
+}
