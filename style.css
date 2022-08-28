@@ -36,6 +36,7 @@ select:required:invalid {
     color: gray;
   }
 #myHtml {
+    background: url(assinatura_padrao.png) no-repeat;
     padding-top: 10px;
     position: absolute;
     top: 5px;
