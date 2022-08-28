@@ -38,9 +38,9 @@
                     <label>Fone</label>
                     <input type="text" placeholder="Seu telefone" ng-model="telefone" data-mask="(00) 0 0000 0000" id="telefone" data-mask-selectonfocus="true">
                 </div>
-                <input id="btn_convert" type="button" value="Gerar Assinatura"/>
+                <input class="button" id="btn-Preview-Image" type="button" value="Gerar Assinatura"/>
             </div>
-            <div id="myHtml">
+            <div id="html-content-holder">
                 <div id="download">
                     <span class="nome">{{nome}}</span>
                     <span class="cargo">{{cargo}}</span>
@@ -49,30 +49,29 @@
                     <span class="telefonesetor">{{telefonesetor}}</span>
                 </div>
             </div>
-            <div id="previewImg">
+            <div id="previewImage">
             </div>
         </div>
 
         <script>
-        $(document).ready(function () {
+            $(document).ready(function(){
 
-            $("#btn_convert").on('click', function () {
-                html2canvas(document.getElementById("myHtml"),
-                    {
-                        allowTaint: true,
-                        useCORS: true
-                    }).then(function (canvas) {
-                        var anchorTag = document.createElement("a");
-                        document.body.appendChild(anchorTag);
-                        document.getElementById("previewImg").appendChild(canvas);
-                        anchorTag.download = "assinatura.jpg";
-                        anchorTag.href = canvas.toDataURL();
-                        anchorTag.target = '_blank';
-                        anchorTag.click();
-                    });
+            var element = $("#html-content-holder"); // global variable
+            var getCanvas; // global variable
+            
+            $("#btn-Preview-Image").on('click', function () {
+                html2canvas(element, {
+                onrendered: function (canvas) {
+                        $("#previewImage").append(canvas);
+                        getCanvas = canvas;
+                    }
+                });
             });
 
-        });
+            });
+                $(document).ready(function(){
+                $('#telefone').mask('(00) 0 0000 0000');
+            });
         </script>
     </body>
 </html>
